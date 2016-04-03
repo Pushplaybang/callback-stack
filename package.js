@@ -3,7 +3,7 @@ Package.describe({
   name: 'pushplaybang:callback-stack',
   version: '0.0.1',
   summary: 'callback utility mixin',
-  git: '',
+  git: 'https://github.com/Pushplaybang/callback-stack',
   documentation: 'README.md'
 });
 
