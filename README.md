@@ -14,18 +14,30 @@ For Meteor, Simple install the package via atmosphere
 meteor add pushplaybang:callback-stack
 ```
 
+with npm:
+
+```sh
+npm install simple-callback-stack --save
+```
+
+or with bower:
+
+```sh
+bower install simple-callback-stack --save
+```
 
 
-### Setup
+## Setup
 Simply create a new instance of `CallbackStack()`
 
 ````js
 someObj.cbStack = new CallbackStack();
 ````
 
+## API
+simple-calback-stack has a pretty simple api, as described below.
 
-
-# Add
+#### Add
 the add method will accept either an anonymous function, an array of anonymous functions, or an object of functions, you can optionally add a namespace to the callbacks.
 
 ````js
@@ -68,7 +80,7 @@ someObj.cbStack.add({
 
 
 
-# Run
+#### Run
 When you'd like to execute the stack of callbacks, simple call run, you can optionally add a namespace to the callbacks.
 
 ````js
@@ -77,7 +89,7 @@ someObj.cbStack.run('optional');
 
 
 
-# Clear
+#### Clear
 running the callback stack will clear all callbacks if no namespace is specified, or only the items with the namespace, you can reset the stack, or the namespaced functions by calling clear directly.
 
 ````js
@@ -86,7 +98,7 @@ someObj.cbStack.clear('optional');
 
 
 
-# ClearAll
+#### ClearAll
 clear the entire stack by calling the clearAll method.
 
 ````js
