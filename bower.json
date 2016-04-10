@@ -1,5 +1,5 @@
 {
-  "name": "callback-stack",
+  "name": "simple-callback-stack",
   "main": "callback-stack.js",
   "authors": [
     "Paul van Zyl <paul@nonacreative.com>"
