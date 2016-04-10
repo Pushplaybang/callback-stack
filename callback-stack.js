@@ -12,7 +12,8 @@ CallbackStack = function() {
 /**
  * @summary describe
  * @locus Anywhere
- * @param {Function|Array|Object} [cbStack] a function, array of functions, or object of functions to store
+ * @param {Function|Array|Object} [cbStack] a function, array of
+ * functions, or object of functions to store
  * @param {String} [ns] a namespace for the stored functions
  */
 CallbackStack.prototype.store = function(cbStack, ns) {
@@ -79,6 +80,6 @@ CallbackStack.prototype.clear = function(ns) {
  */
 CallbackStack.prototype.clearAll = function(ns) {
   this.stack = {
-    'global': [],
+    all: [],
   };
 };
