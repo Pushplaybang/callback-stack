@@ -1,0 +1,22 @@
+{
+  "name": "callback-stack",
+  "main": "callback-stack.js",
+  "authors": [
+    "Paul van Zyl <paul@nonacreative.com>"
+  ],
+  "description": "Utility mixin for stacking callbacks in JS",
+  "keywords": [
+    "callbacks",
+    "queue",
+    "utility"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Pushplaybang/callback-stack",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
