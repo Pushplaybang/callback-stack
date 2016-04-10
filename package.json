@@ -1,0 +1,24 @@
+{
+  "name": "simple-callback-stack",
+  "version": "0.0.2",
+  "description": "Utility mixin for stacking callbacks in JS",
+  "main": "callback-stack.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pushplaybang/callback-stack.git"
+  },
+  "keywords": [
+    "callbacks",
+    "queue",
+    "utility"
+  ],
+  "author": "Paul van Zyl <paul@nonacreative.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pushplaybang/callback-stack/issues"
+  },
+  "homepage": "https://github.com/Pushplaybang/callback-stack#readme"
+}
