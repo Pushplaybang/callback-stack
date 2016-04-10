@@ -1,6 +1,8 @@
 # Callback Stack
 Utility mixin for stacking callbacks in JS
 
+[![Code Climate](https://codeclimate.com/github/Pushplaybang/callback-stack/badges/gpa.svg)](https://codeclimate.com/github/Pushplaybang/callback-stack)
+
 This modules allows to to "stack" callbacks, and then excecute them at a later stage, and has a tremendously simple api. 
 
 
