@@ -53,6 +53,10 @@ CallbackStack.prototype.run = function(ns) {
   var id = ns || 'all';
   var i = 0;
 
+  if (!this.stack[id]) {
+    return;
+  }
+
   // Loop through the stack and execute each.
   while (i < this.stack[id].length || i === 100) {
     this.stack[id][i]();
