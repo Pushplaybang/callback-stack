@@ -3,88 +3,67 @@
  * @locus Anywhere
  * @constructor
  */
-CallbackStack = function() {
-  this.stack = {
-    all: [],
-  };
-};
 
-/**
- * @summary describe
- * @locus Anywhere
- * @param {Function|Array|Object} [cbStack] a function, array of
- * functions, or object of functions to store
- * @param {String} [ns] a namespace for the stored functions
- */
-CallbackStack.prototype.store = function(cbStack, ns) {
-  var _this = this;
-  var id = ns || 'all';
-
-  // init the stack if it doesn't exist
-  this.stack[id] = this.stack[id] || [];
-
-  // exit early
-  if (!cbStack) {
-    return this;
+class CallbackStack {
+  constructor() {
+    this.stack = {
+      all: [],
+    };
   }
 
-  // if its a func
-  if (typeof(cbStack) === 'function') {
-    _this.stack[id].push(cbStack);
-  // if its an array
-  } else if (Array.isArray(cbStack)) {
-    cbStack.forEach(function(func) {
-      _this.stack[id].push(func);
-    });
-  // if its an object
-  } else if (typeof(cbStack) === 'object') {
-    Object.keys(cbStack).forEach(function(func) {
-      _this.stack[id].push(cbStack[func]);
-    });
-  }
-};
+  store(cbStack, id = 'all') {
+    // init the stack if it doesn't exist
+    this.stack[id] = this.stack[id] || [];
 
-/**
- * @summary run the stacked callbacks
- * @locus Anywhere
- * @param {String} [ns]
- */
-CallbackStack.prototype.run = function(ns) {
-  var id = ns || 'all';
-  var i = 0;
+    // exit early
+    if (!cbStack) {
+      return false;
+    }
 
-  if (!this.stack[id]) {
-    return;
+    // if its a func
+    if (typeof(cbStack) === 'function') {
+      this.stack[id].push(cbStack);
+    // if its an array
+    } else if (Array.isArray(cbStack)) {
+      cbStack.forEach(function(func) {
+        this.stack[id].push(func);
+      });
+    // if its an object
+    } else if (typeof(cbStack) === 'object') {
+      Object.keys(cbStack).forEach(function(func) {
+        this.stack[id].push(cbStack[func]);
+      });
+    }
   }
 
-  // Loop through the stack and execute each.
-  while (i < this.stack[id].length || i === 100) {
-    this.stack[id][i]();
-    i++;
+  // Run a callback, or all
+  run(id = 'all') {
+    var i = 0;
+
+    // exit early if theres no cb with this id
+    if (!this.stack[id]) {
+      return false;
+    }
+
+    // Loop through the stack and execute each.
+    while (i < this.stack[id].length || i === 100) {
+      this.stack[id][i]();
+      i++;
+    }
+
+    // clear the stack
+    this.clear(id);
   }
 
-  // clear the stack
-  this.clear(ns);
-};
+  clear(id = 'all') {
+    this.stack[id] = [];
+  }
 
-/**
- * @summary clear the stacked callbacks
- * @locus Anywhere
- * @param {String} [ns]
- */
-CallbackStack.prototype.clear = function(ns) {
-  var id = ns || 'all';
-  this.stack[id] = [];
-};
+  clearAll() {
+    this.stack = {
+      all: [],
+    };
+  }
+}
 
-/**
- * @summary clear all stacked callbacks
- * @locus Anywhere
- * @param {String} [ns]
- */
-CallbackStack.prototype.clearAll = function(ns) {
-  this.stack = {
-    all: [],
-  };
-};
-
+export { CallbackStack };

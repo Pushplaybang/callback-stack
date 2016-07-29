@@ -1,6 +1,6 @@
 {
   "name": "simple-callback-stack",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Utility mixin for stacking callbacks in JS",
   "main": "callback-stack.js",
   "scripts": {
