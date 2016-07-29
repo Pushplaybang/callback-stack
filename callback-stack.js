@@ -11,9 +11,7 @@ class CallbackStack {
     };
   }
 
-  store(cbStack, ns) {
-    var id = ns || 'all';
-
+  store(cbStack, id = 'all') {
     // init the stack if it doesn't exist
     this.stack[id] = this.stack[id] || [];
 
@@ -54,7 +52,7 @@ class CallbackStack {
     }
 
     // clear the stack
-    this.clear(ns);
+    this.clear(id);
   }
 
   clear(id = 'all') {

@@ -1,7 +1,7 @@
 /* eslint-disable */
 Package.describe({
   name: 'pushplaybang:callback-stack',
-  version: '0.0.4',
+  version: '0.0.5',
   summary: 'callback utility mixin',
   git: 'https://github.com/Pushplaybang/callback-stack',
   documentation: 'README.md'
