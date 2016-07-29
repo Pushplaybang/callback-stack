@@ -3,7 +3,7 @@ Utility mixin for stacking callbacks in JS
 
 [![Code Climate](https://codeclimate.com/github/Pushplaybang/callback-stack/badges/gpa.svg)](https://codeclimate.com/github/Pushplaybang/callback-stack)
 
-This modules allows to to "stack" callbacks, and then excecute them at a later stage, and has a tremendously simple api. 
+This modules allows to to "stack" callbacks, and then excecute them at a later stage, and has a tremendously simple api.
 
 
 
@@ -110,6 +110,10 @@ someObj.cbStack.clearAll();
 ### Contributions and Suggestions Welcome!
 Have something you think this needs or could use as an improvement? Let me know.  add [an issue on github](https://github.com/Pushplaybang/callback-stack) or fork and create a pull request.
 
+## Changelog
+This includes notable changes to the package
+
+0.0.4 - refactor to ES6 class, setup proper ES6 export
 
 
 ____
